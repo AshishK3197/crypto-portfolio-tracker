@@ -16,7 +16,7 @@ const App = () => {
 
   const fetchData = async (coin) => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/v3/coins/${coin}/price-chart`);
+      const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=30`);
       const formattedData = response?.data?.map((item) => ({
         timestamp: item[0],
         open: item[1],
